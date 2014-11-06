@@ -95,7 +95,7 @@ def Main():
 	# TO ENCRYPT
 	if len(sys.argv) == 3:
 		if os.path.isfile(sys.argv[1]):
-			if sys.argv[0] == sys.argv[1]: sys.exit('>> Do not encrypt yourself!')
+			if os.path.basename(sys.argv[0]) == os.path.basename(sys.argv[1]): sys.exit('>> Do not encrypt yourself!')
 			in_file = open(sys.argv[1], 'rb').read()
 			with open(sys.argv[1]+ext, 'wb') as out_file:
 				out_file.write(Encrypt(sys.argv[2], in_file))
